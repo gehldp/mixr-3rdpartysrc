@@ -1,10 +1,10 @@
 
-OpenEaagles 3rd Party Source
-============================
+Mixed Reality Simulation Platform 3rd Party Source
+==================================================
 
-The most current version of OpenEaagles (OE) can be found at [www.OpenEaagles.org][1].
+The most current version of the mixed reality simulation platform can be found at [www.mxrp.org][mxrp].
 
-* This package includes the source code for OE's 3rd party dependency libraries.
+* This package includes the source code for MXRP's 3rd party dependency libraries.
 
 * We recommend compiling and installing these libraries into a directory within your user account.  This avoids potential clashes with installed system files. The script file `build_libs.sh` will build and install almost all required libraries to your local directory. As written, it does assume you have installed the developmental versions of `freeglut` and `freetype`. Make sure to set OpenEaagles environment variables by running `source setenv` within the `OpenEaagles` directory.  This defines where the 3rd party libaries will be placed.
 
@@ -24,23 +24,24 @@ The following is more explicit step-by-step instructions to build individual lib
 
 As an example, consider the following directory structure:
 
-`/home/me` # location of my user account  
-`/home/me/oe` # the place where all OE related work is located  
-`/home/me/oe/OpenEaagles` # OE framework  
-`/home/me/oe/OpenEaaglesExamples` # OE examples  
-`/home/me/oe/oe_3rdparty` # desired location of where 3rd party dependencies will be installed  
-`/home/me/oe/OpenEaagles3rdPartySrc` # source code to 3rd party packages  
+`/home/me` # location of my user account
+`/home/me/mxrp` # the place where all MXRP related work is located
+`/home/me/mxrp/mxrp` # MXRP framework
+`/home/me/mxrp/mxrp-examples` # MXRP examples
+`/home/me/mxrp/mxrp-3rdpartysrc` # source code to 3rd party packages
+
+`/home/me/mxrp/mxrp_3rdparty` # desired location of where 3rd party dependencies will be installed
 
 After unzipping or untarring ccl, jsbsim, zeromq, protobuf, etc, enter each directory and run `configure` as follows to setup the build system:
 
-`./configure --prefix=/home/me/oe/oe_3rdparty` # for most libraries  
-`./autogen.sh --prefix=home/me/oe/oe_3rdparty --enable-libraries` # for JSBSim  
+`./configure --prefix=/home/me/mxrp/mxrp_3rdparty` # for most libraries
+`./autogen.sh --prefix=home/me/mxrp/mxrp_3rdparty --enable-libraries` # for JSBSim
 
-Next, use `make` to compile and create libraries, followed by `make install` to copy or install them to the directory specified.  The example will compile all libraries and install them to `/home/me/oe/oe_3rdparty`.  For zeromq, manually copy the file `zmq.hpp` to `oe_3rdparty/include`.
+Next, use `make` to compile and create libraries, followed by `make install` to copy or install them to the directory specified.  The example will compile all libraries and install them to `/home/me/mxrp/mxrp_3rdparty`.  For zeromq, manually copy the file `zmq.hpp` to `mxrp_3rdparty/include`.
 
 * Several dependencies can be installed via `apt-get` or `yum` (e.g., FTGL, FreeType and FreeGlut) if Internet access is available. Other libraries, such as cigi and JSBSim are not available in the public repositories, hence the need this package.
 
 * For the libraries being manually compiled and installed, make sure to use the ones provided here.  As an example, the version of JSBSim included here, defines an API that OE is designed to use.  We do our best to ensure compatibility with a wide range of versions but not everything is 100% all the time; to be safe, use the ones provided.
 
 
-[1]: http://www.OpenEaagles.org
+[mxrp]: http://www.mxrp.org
