@@ -4,8 +4,8 @@
 init_install_location()
 {
    # location of install libs
-   rm -rf $MXRP_3RD_PARTY_ROOT
-   mkdir $MXRP_3RD_PARTY_ROOT
+   rm -rf $MIXR_3RD_PARTY_ROOT
+   mkdir $MIXR_3RD_PARTY_ROOT
    # temporary location to build libs
    rm -rf tmp
    mkdir tmp
@@ -18,7 +18,7 @@ install_ftgl()
    pushd .
    tar xzvf ftgl-2.1.3-rc5.tar.gz --directory tmp
    cd tmp/ftgl-2.1.3~rc5
-   ./configure --prefix=$MXRP_3RD_PARTY_ROOT --disable-shared
+   ./configure --prefix=$MIXR_3RD_PARTY_ROOT --disable-shared
    make
    make install
    popd
@@ -35,7 +35,7 @@ install_freeglut()
       tar -xvf freeglut-3.0.0.tar.gz --directory tmp
       mkdir tmp/freeglut-build
       cd tmp/freeglut-build
-      cmake -DCMAKE_INSTALL_PREFIX=$MXRP_3RD_PARTY_ROOT \
+      cmake -DCMAKE_INSTALL_PREFIX=$MIXR_3RD_PARTY_ROOT \
             ../freeglut-3.0.0
       make
       make install
@@ -52,7 +52,7 @@ install_cigi()
    pushd .
    tar xzvf ccl_3_3_3a.tar.gz --directory tmp
    cd tmp/ccl
-   ./configure --prefix=$MXRP_3RD_PARTY_ROOT --disable-shared
+   ./configure --prefix=$MIXR_3RD_PARTY_ROOT --disable-shared
    make
    make install
    popd
@@ -65,7 +65,7 @@ install_jsbsim()
    pushd .
    tar xzvf jsbsim_cvs_v2015_0704.tgz --directory tmp
    cd tmp/jsbsim
-   ./autogen.sh --prefix=$MXRP_3RD_PARTY_ROOT --enable-libraries
+   ./autogen.sh --prefix=$MIXR_3RD_PARTY_ROOT --enable-libraries
    make
    make install
    popd
@@ -78,7 +78,7 @@ install_protobuf()
    pushd .
    tar xzvf protobuf-2.6.1.tar.gz --directory tmp
    cd tmp/protobuf-2.6.1
-   ./configure --prefix=$MXRP_3RD_PARTY_ROOT --disable-shared
+   ./configure --prefix=$MIXR_3RD_PARTY_ROOT --disable-shared
    make
    make install
    popd
@@ -91,7 +91,7 @@ install_zeromq()
    pushd .
    tar xzvf zeromq-4.2.1.tar.gz --directory tmp
    cd tmp/zeromq-4.2.1
-   ./configure --prefix=$MXRP_3RD_PARTY_ROOT
+   ./configure --prefix=$MIXR_3RD_PARTY_ROOT
    make
    make install
    popd
@@ -107,7 +107,7 @@ install_hla()
       tar -jxvf OpenRTI-0.9.0.tar.bz2 --directory tmp
       mkdir tmp/openrti-build
       cd tmp/openrti-build
-      cmake -DCMAKE_INSTALL_PREFIX=$MXRP_3RD_PARTY_ROOT \
+      cmake -DCMAKE_INSTALL_PREFIX=$MIXR_3RD_PARTY_ROOT \
             -DOPENRTI_ENABLE_PYTHON_BINDINGS:BOOL=OFF \
             -DOPENRTI_BUILD_SHARED:BOOL=OFF \
             ../OpenRTI-0.9.0
@@ -126,7 +126,7 @@ install_flex()
    pushd .
    tar xzvf parser-utils/flex-2.5.39.tar.gz --directory tmp
    cd tmp/flex-2.5.39
-   ./configure --prefix=$MXRP_3RD_PARTY_ROOT --disable-shared
+   ./configure --prefix=$MIXR_3RD_PARTY_ROOT --disable-shared
    make
    make install
    popd
@@ -139,15 +139,15 @@ install_bison()
    pushd .
    tar xzvf parser-utils/bison-3.0.4.tar.gz --directory tmp
    cd tmp/bison-3.0.4
-   ./configure --prefix=$MXRP_3RD_PARTY_ROOT --disable-shared
+   ./configure --prefix=$MIXR_3RD_PARTY_ROOT --disable-shared
    make
    make install
    popd
 }
 
 # check for location to install 3rd party libs
-if [ -z "$MXRP_3RD_PARTY_ROOT" ]; then
-   echo "Need to source setenv from within mxrp"
+if [ -z "$MIXR_3RD_PARTY_ROOT" ]; then
+   echo "Need to source setenv from within mixr"
    exit 1
 fi
 
@@ -162,5 +162,5 @@ install_hla
 #install_flex
 #install_bison
 
-export PATH=$MXRP_3RD_PARTY_ROOT/bin:$PATH
+export PATH=$MIXR_3RD_PARTY_ROOT/bin:$PATH
 

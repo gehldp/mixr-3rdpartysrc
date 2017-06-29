@@ -1,12 +1,12 @@
 
-Mixed Reality Simulation Platform 3rd Party Source
-==================================================
+Mixed Reality Simulation Platform (MIXR) 3rd Party Source
+=========================================================
 
-The most current version of the mixed reality simulation platform can be found at [www.mxrp.org][mxrp].
+The most current version of the mixed reality simulation platform can be found at [www.mixr-platform.org][mixr].
 
-* This package includes the source code for MXRP's 3rd party dependency libraries.
+* This package includes the source code for MIXR's 3rd party dependency libraries.
 
-* We recommend compiling and installing these libraries into a directory within your user account.  This avoids potential clashes with installed system files. The script file `build_libs.sh` will build and install almost all required libraries to your local directory. As written, it does assumes you have installed the developmental versions of `freeglut` and `freetype`. Make sure to the MXRP environment variables are set by running `source setenv.sh` within the `mxrp` directory.  This defines where the 3rd party libaries will be placed.
+* We recommend compiling and installing these libraries into a directory within your user account.  This avoids potential clashes with installed system files. The script file `build_libs.sh` will build and install almost all required libraries to your local directory. As written, it does assumes you have installed the developmental versions of `freeglut` and `freetype`. Make sure the MIXR environment variables are set by running `source setenv.sh` within the `mixr` directory.  This defines where the 3rd party libaries will be placed.
 
 * Make sure to have `autogen`, `automake`, `libtool`, and `libtool-bin` installed.  These are essential prerequisites for `configure` and/or `autogen` scripts to execute properly.
 
@@ -26,27 +26,27 @@ As an example, consider the following directory structure:
 
 `/home/me` # location of my user account
 
-`/home/me/mxrp` # the place where all MXRP related work is located
+`/home/me/mixr` # the place where all MIXR related work is located
 
-`/home/me/mxrp/mxrp` # MXRP framework
+`/home/me/mixr/mxrp` # MIXR framework
 
-`/home/me/mxrp/mxrp-examples` # MXRP examples
+`/home/me/mixr/mixr-examples` # MIXR examples
 
-`/home/me/mxrp/mxrp-3rdpartysrc` # source code to 3rd party packages
+`/home/me/mixr/mixr-3rdpartysrc` # source code to 3rd party packages
 
-`/home/me/mxrp/mxrp_3rdparty` # desired location of where 3rd party dependencies will be installed
+`/home/me/mixr/mixr_3rdparty` # desired location of where 3rd party dependencies will be installed
 
 After unzipping or untarring ccl, jsbsim, zeromq, protobuf, etc, enter each directory and run `configure` as follows to setup the build system:
 
-`./configure --prefix=/home/me/mxrp/mxrp_3rdparty` # for most libraries
+`./configure --prefix=/home/me/mixr/mixr_3rdparty` # for most libraries
 
-`./autogen.sh --prefix=home/me/mxrp/mxrp_3rdparty --enable-libraries` # for JSBSim
+`./autogen.sh --prefix=home/me/mixr/mixr_3rdparty --enable-libraries` # for JSBSim
 
-Next, use `make` to compile and create libraries, followed by `make install` to copy or install them to the directory specified.  The example will compile all libraries and install them to `/home/me/mxrp/mxrp_3rdparty`.  For zeromq, manually copy the file `zmq.hpp` to `mxrp_3rdparty/include`.
+Next, use `make` to compile and create libraries, followed by `make install` to copy or install them to the directory specified.  The example will compile all libraries and install them to `/home/me/mixr/mixr_3rdparty`.  For zeromq, manually copy the file `zmq.hpp` to `mixr_3rdparty/include`.
 
 * Several dependencies can be installed via `apt-get` or `yum` (e.g., FTGL, FreeType and FreeGlut) if Internet access is available. Other libraries, such as cigi and JSBSim are not available in the public repositories, hence the need this package.
 
-* For the libraries being manually compiled and installed, make sure to use the ones provided here.  As an example, the version of JSBSim included here, defines an API that MXRP is designed to use.  We do our best to ensure compatibility with a wide range of versions but not everything is 100% all the time; to be safe, use the ones provided.
+* For the libraries being manually compiled and installed, make sure to use the ones provided here.  As an example, the version of JSBSim included here, defines an API that MIXR is designed to use.  We do our best to ensure compatibility with a wide range of versions but not everything is 100% all the time; to be safe, use the ones provided.
 
 
-[mxrp]: http://www.mxrp.org
+[mixr]: http://www.mixr-platform.org
