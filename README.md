@@ -26,23 +26,23 @@ As an example, consider the following directory structure:
 
 `/home/me` # location of my user account
 
-`/home/me/mixr` # the place where all MIXR related work is located
+`/home/me/mixr-platform` # the place where all MIXR related work is located
 
-`/home/me/mixr/mxrp` # MIXR framework
+`/home/me/mixr-platform/mxrp` # base platform code
 
-`/home/me/mixr/mixr-examples` # MIXR examples
+`/home/me/mixr-platform/mixr-examples` # MIXR examples
 
-`/home/me/mixr/mixr-3rdpartysrc` # source code to 3rd party packages
+`/home/me/mixr-platform/mixr-3rdpartysrc` # source code to 3rd party packages
 
-`/home/me/mixr/mixr_3rdparty` # desired location of where 3rd party dependencies will be installed
+`/home/me/mixr-platform/mixr_3rdparty` # desired location of where 3rd party dependencies will be installed
 
 After unzipping or untarring ccl, jsbsim, zeromq, protobuf, etc, enter each directory and run `configure` as follows to setup the build system:
 
-`./configure --prefix=/home/me/mixr/mixr_3rdparty` # for most libraries
+`./configure --prefix=/home/me/mixr-platform/mixr_3rdparty` # for most libraries
 
-`./autogen.sh --prefix=home/me/mixr/mixr_3rdparty --enable-libraries` # for JSBSim
+`./autogen.sh --prefix=home/me/mixr-platform/mixr_3rdparty --enable-libraries` # for JSBSim
 
-Next, use `make` to compile and create libraries, followed by `make install` to copy or install them to the directory specified.  The example will compile all libraries and install them to `/home/me/mixr/mixr_3rdparty`.  For zeromq, manually copy the file `zmq.hpp` to `mixr_3rdparty/include`.
+Next, use `make` to compile and create libraries, followed by `make install` to copy or install them to the directory specified.  The example will compile all libraries and install them to `/home/me/mixr-platform/mixr_3rdparty`.  For zeromq, manually copy the file `zmq.hpp` to `mixr_3rdparty/include`.
 
 * Several dependencies can be installed via `apt-get` or `yum` (e.g., FTGL, FreeType and FreeGlut) if Internet access is available. Other libraries, such as cigi and JSBSim are not available in the public repositories, hence the need this package.
 
